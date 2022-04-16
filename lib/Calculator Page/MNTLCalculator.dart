@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'Stakingpage.dart';
+import '../Stakingpage.dart';
 
-class UmeeCalculator extends StatefulWidget {
-  const UmeeCalculator({Key? key}) : super(key: key);
+class MNTLCalculator extends StatefulWidget {
+  const MNTLCalculator({Key? key}) : super(key: key);
 
   @override
-  State<UmeeCalculator> createState() => _UmeeCalculatorState();
+  State<MNTLCalculator> createState() => _MNTLCalculatorState();
 }
 
-class _UmeeCalculatorState extends State<UmeeCalculator> {
+class _MNTLCalculatorState extends State<MNTLCalculator> {
   TextEditingController nameController = TextEditingController();
   double _ki = 10;
   double ki = 0;
@@ -17,7 +17,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
     double _value = 0;
     return Scaffold(
       appBar: AppBar(
-        title: Text('UMEE CALCULATOR',
+        title: Text('MNTL CALCULATOR',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -123,7 +123,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
             ),
           ),
           Text(
-            'Amount in UMEE',
+            'Amount in MNTL',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.bold,
@@ -139,9 +139,9 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                 color: Colors.white,
               ),
               decoration: InputDecoration(
-                hintText: 'Amount in UMEE',
+                hintText: 'Amount in MNTL',
                 border: OutlineInputBorder(),
-                labelText: 'Amount in UMEE',
+                labelText: 'Amount in MNTL',
               ),
               onChanged: (_ki) {
                 setState(() {
@@ -209,7 +209,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const UmeeCalculator(),
+                            builder: (context) => const MNTLCalculator(),
                           ));
                       ;
                     },

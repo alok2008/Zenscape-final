@@ -19,12 +19,6 @@ class NetworksPage extends StatelessWidget {
         Container(
           height: 1000,
        width: 400,
-       // decoration: BoxDecoration(
-       //   image: DecorationImage(
-       //     image: AssetImage('lib/bckgrd.jpeg'),
-       //      fit: BoxFit.cover,
-       //    ),
-       //  ),
         child: PageView(
           children: <Widget>[
             Column(
@@ -39,7 +33,7 @@ class NetworksPage extends StatelessWidget {
                             Icons.arrow_back_outlined,
                           ),
                           iconSize: 30,
-                          color: Colors.white,
+                          color: Colors.black,
                           splashColor: Colors.purple,
                           onPressed: () {
                             Navigator.pop(context);
@@ -123,7 +117,6 @@ class NetworksPage extends StatelessWidget {
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
-                                  // color: Colors.pink,
                                   color: Colors.blueGrey,
                                   blurRadius: 1.0, // soften the shadow
                                   spreadRadius:0, //extend the shadow

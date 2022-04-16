@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'Stakingpage.dart';
+import '../Stakingpage.dart';
 
-class HUAHUACalculator extends StatefulWidget {
-  const HUAHUACalculator({Key? key}) : super(key: key);
+class FlixCalculator extends StatefulWidget {
+  const FlixCalculator({Key? key}) : super(key: key);
 
   @override
-  State<HUAHUACalculator> createState() => _HUAHUACalculatorState();
+  State<FlixCalculator> createState() => _FlixCalculatorState();
 }
 
-class _HUAHUACalculatorState extends State<HUAHUACalculator> {
+class _FlixCalculatorState extends State<FlixCalculator> {
   TextEditingController nameController = TextEditingController();
   double _ki = 10;
   double ki = 0;
@@ -17,7 +17,7 @@ class _HUAHUACalculatorState extends State<HUAHUACalculator> {
     double _value = 0;
     return Scaffold(
       appBar: AppBar(
-        title: Text('HUAHUA CALCULATOR',
+        title: Text('FLIX CALCULATOR',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -123,7 +123,7 @@ class _HUAHUACalculatorState extends State<HUAHUACalculator> {
             ),
           ),
           Text(
-            'Amount in HUAHUA',
+            'Amount in FLIX',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.bold,
@@ -139,9 +139,9 @@ class _HUAHUACalculatorState extends State<HUAHUACalculator> {
                 color: Colors.white,
               ),
               decoration: InputDecoration(
-                hintText: 'Amount in HUAHUA',
+                hintText: 'Amount in FLIX',
                 border: OutlineInputBorder(),
-                labelText: 'Amount in HUAHUA',
+                labelText: 'Amount in FLIX',
               ),
               onChanged: (_ki) {
                 setState(() {
@@ -209,7 +209,7 @@ class _HUAHUACalculatorState extends State<HUAHUACalculator> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HUAHUACalculator(),
+                            builder: (context) => const FlixCalculator(),
                           ));
                       ;
                     },

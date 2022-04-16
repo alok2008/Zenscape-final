@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Stakingpage.dart';
+import '../Stakingpage.dart';
 
 class KICalculator extends StatefulWidget {
   const KICalculator({Key? key}) : super(key: key);
@@ -88,7 +88,7 @@ class _KICalculatorState extends State<KICalculator> {
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
           Container(
@@ -130,7 +130,7 @@ class _KICalculatorState extends State<KICalculator> {
               style: TextStyle(
                 fontSize: 11,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
@@ -161,30 +161,6 @@ class _KICalculatorState extends State<KICalculator> {
               borderRadius: BorderRadius.circular(10.0),
             ),
           ),
-          // Expanded(
-          //   child: Container(
-          //     child: Row(
-          //       children: [
-          //         Padding(
-          //           padding: const EdgeInsets.all(10),
-          //           child: Text(
-          //             ki.toStringAsFixed(1),
-          //             style: TextStyle(
-          //               fontSize: 11,
-          //               fontWeight: FontWeight.bold,
-          //               color: Colors.white,
-          //             ),
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //     margin: EdgeInsets.fromLTRB(18, 30, 18, 30),
-          //     decoration: BoxDecoration(
-          //       color: Color(0xFF1D1e33),
-          //       borderRadius: BorderRadius.circular(10.0),
-          //     ),
-          //   ),
-          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [

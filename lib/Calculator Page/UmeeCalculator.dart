@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'Stakingpage.dart';
+import '../Stakingpage.dart';
 
-class FlixCalculator extends StatefulWidget {
-  const FlixCalculator({Key? key}) : super(key: key);
+class UmeeCalculator extends StatefulWidget {
+  const UmeeCalculator({Key? key}) : super(key: key);
 
   @override
-  State<FlixCalculator> createState() => _FlixCalculatorState();
+  State<UmeeCalculator> createState() => _UmeeCalculatorState();
 }
 
-class _FlixCalculatorState extends State<FlixCalculator> {
+class _UmeeCalculatorState extends State<UmeeCalculator> {
   TextEditingController nameController = TextEditingController();
   double _ki = 10;
   double ki = 0;
@@ -17,7 +17,7 @@ class _FlixCalculatorState extends State<FlixCalculator> {
     double _value = 0;
     return Scaffold(
       appBar: AppBar(
-        title: Text('FLIX CALCULATOR',
+        title: Text('UMEE CALCULATOR',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -123,7 +123,7 @@ class _FlixCalculatorState extends State<FlixCalculator> {
             ),
           ),
           Text(
-            'Amount in FLIX',
+            'Amount in UMEE',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.bold,
@@ -139,9 +139,9 @@ class _FlixCalculatorState extends State<FlixCalculator> {
                 color: Colors.white,
               ),
               decoration: InputDecoration(
-                hintText: 'Amount in FLIX',
+                hintText: 'Amount in UMEE',
                 border: OutlineInputBorder(),
-                labelText: 'Amount in FLIX',
+                labelText: 'Amount in UMEE',
               ),
               onChanged: (_ki) {
                 setState(() {
@@ -209,7 +209,7 @@ class _FlixCalculatorState extends State<FlixCalculator> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const FlixCalculator(),
+                            builder: (context) => const UmeeCalculator(),
                           ));
                       ;
                     },

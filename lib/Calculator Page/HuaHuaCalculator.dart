@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'Stakingpage.dart';
+import '../Stakingpage.dart';
 
-class MNTLCalculator extends StatefulWidget {
-  const MNTLCalculator({Key? key}) : super(key: key);
+class HUAHUACalculator extends StatefulWidget {
+  const HUAHUACalculator({Key? key}) : super(key: key);
 
   @override
-  State<MNTLCalculator> createState() => _MNTLCalculatorState();
+  State<HUAHUACalculator> createState() => _HUAHUACalculatorState();
 }
 
-class _MNTLCalculatorState extends State<MNTLCalculator> {
+class _HUAHUACalculatorState extends State<HUAHUACalculator> {
   TextEditingController nameController = TextEditingController();
   double _ki = 10;
   double ki = 0;
@@ -17,7 +17,7 @@ class _MNTLCalculatorState extends State<MNTLCalculator> {
     double _value = 0;
     return Scaffold(
       appBar: AppBar(
-        title: Text('MNTL CALCULATOR',
+        title: Text('HUAHUA CALCULATOR',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
@@ -123,7 +123,7 @@ class _MNTLCalculatorState extends State<MNTLCalculator> {
             ),
           ),
           Text(
-            'Amount in MNTL',
+            'Amount in HUAHUA',
             style: TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.bold,
@@ -139,9 +139,9 @@ class _MNTLCalculatorState extends State<MNTLCalculator> {
                 color: Colors.white,
               ),
               decoration: InputDecoration(
-                hintText: 'Amount in MNTL',
+                hintText: 'Amount in HUAHUA',
                 border: OutlineInputBorder(),
-                labelText: 'Amount in MNTL',
+                labelText: 'Amount in HUAHUA',
               ),
               onChanged: (_ki) {
                 setState(() {
@@ -209,7 +209,7 @@ class _MNTLCalculatorState extends State<MNTLCalculator> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const MNTLCalculator(),
+                            builder: (context) => const HUAHUACalculator(),
                           ));
                       ;
                     },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
-import 'UmeeCalculator.dart';
+import 'Calculator Page/UmeeCalculator.dart';
 import 'kipage.dart';
 import 'Flixpage.dart';
 import 'MNTLPage.dart';
@@ -308,7 +308,7 @@ class _UmeeState extends State<Umee> {
                                 padding: const EdgeInsets.all(10.0),
                                 primary: Colors.white,
                                 textStyle: const TextStyle(fontSize: 10,
-                                fontFamily: 'Poppins'),
+                                    fontFamily: 'Poppins'),
                               ),
                               onPressed: () {},
                               child: const Text('Delegate With Ledger'),
@@ -345,127 +345,158 @@ class _UmeeState extends State<Umee> {
                   height: 550,
                   width: 1000,
                   child: Column(
-                    children: [
-                      Text(
-                        'Our stats on Umee',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Color(0xFFBA93DA),
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Text(
+                            'Our stats on Umee',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Color(0xFFBA93DA),
+                            ),
+                          ),
                         ),
-                      ),
 
-                      Container(
-                        height: 50,
-                      child: Expanded(
-                        child: Row(
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
 
-                          children: [Text('State')],),
-                      ),
-                      margin: EdgeInsets.fromLTRB(10,10,10,5),
-                      decoration: BoxDecoration(
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('State'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
 
-                          color: Color(0xCCFFFFFF),
-                          borderRadius: BorderRadius.circular(5.0)),
-                    ),
-                      Container(
-                        height: 50,
-                        child: Expanded(
-                          child: Row(
+                                color: Color(0xCCFFFFFF),
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
 
-                            children: [Text('Price')],),
                         ),
-                        margin: EdgeInsets.fromLTRB(10,5,10,5),
-                        decoration: BoxDecoration(
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
+
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Price'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
 
 
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      Container(
-                        height: 50,
-                        child: Expanded(
-                          child: Row(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
 
-                            children: [Text('Yield')],),
                         ),
-                        margin: EdgeInsets.fromLTRB(10,5,10,5),
-                        decoration: BoxDecoration(
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
 
-                            color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      Container(
-                        height: 50,
-                        child: Expanded(
-                          child: Row(
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Yield'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
 
-                            children: [Text('Lockup')],),
+                                color: Color(0xCCFFFFFF),
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+
                         ),
-                        margin: EdgeInsets.fromLTRB(10,5,10,5),
-                        decoration: BoxDecoration(
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
 
-                            // color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      Container(
-                        height: 50,
-                        child: Expanded(
-                          child: Row(
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Lockup'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
 
-                            children: [Text('Uptime')],),
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+
                         ),
-                        margin: EdgeInsets.fromLTRB(10,5,10,5),
-                        decoration: BoxDecoration(
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
 
-                            color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      Container(
-                        height: 50,
-                        child: Expanded(
-                          child: Row(
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Uptime'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
 
-                            children: [Text('Fee')],),
+                                color: Color(0xCCFFFFFF),
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+
                         ),
-                        margin: EdgeInsets.fromLTRB(10,5,10,5),
-                        decoration: BoxDecoration(
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
 
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Fee'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
 
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      Container(
-                        height: 50,
-                        child: Expanded(
-                          child: Row(
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
 
-                            children: [Text('Delegator Amount')],),
                         ),
-                        margin: EdgeInsets.fromLTRB(10,5,10,5),
-                        decoration: BoxDecoration(
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
 
-                            color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                      Container(
-                        height: 50,
-                        child: Expanded(
-                          child: Row(
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Delegator Amount'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
 
-                            children: [Text('Total Delegation')],),
+                                color: Color(0xCCFFFFFF),
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+
                         ),
-                        margin: EdgeInsets.fromLTRB(10,5,10,5),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
+                        Expanded(
+                          child:Container(
+                            height: 50,
+                            child: Row(
 
-                    ]
+                              children: [Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text('Total Delegation'),
+                              )],),
+                            margin: EdgeInsets.fromLTRB(10,10,10,5),
+                            decoration: BoxDecoration(
+
+                                borderRadius: BorderRadius.circular(5.0)),
+                          ),
+                        ),
+                      ]
                   ),
                   margin: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                          // color: Colors.pink,
                           color: Colors.blueGrey,
                           blurRadius: 1.0, // soften the shadow
                           spreadRadius: 0, //extend the shadow
@@ -503,7 +534,7 @@ class _UmeeState extends State<Umee> {
               ),
             ],
           )
-        ]),
+        ],),
       ),
     );
   }
