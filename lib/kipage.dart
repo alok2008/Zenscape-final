@@ -18,8 +18,15 @@ class KI extends StatefulWidget {
 }
 
 class _KIState extends State<KI> {
-  dynamic kiprice;
-  dynamic updatedKIprice1;
+
+  dynamic kiinfbody;
+  dynamic kiinflation;
+  dynamic banktotalbody;
+  dynamic banktotalfinal;
+  dynamic stakingpoolbody;
+  dynamic staking;
+  dynamic APR;
+  dynamic APR1;
 
   void initstate() {
     super.initState();
@@ -29,13 +36,33 @@ class _KIState extends State<KI> {
   // getData() async {
 
   void addData() async {
-    API apiki = await API(Uri.parse(
-        'https://api-utility.cosmostation.io/v1/market/price?id=uxki'));
+    API inflationki = await API(Uri.parse('https://api-kichain.cosmostation.io/v1/minting/inflation'));
+    kiinfbody =await inflationki.getData();
+    kiinflation = double.parse(jsonDecode(kiinfbody)['inflation']);
 
-    kiprice = await apiki.getData();
+    print(kiinflation);
+    print('a');
+    //kiinflation =jsonDecode(kiinfbody)['inflation'];
 
 
-    updatedKIprice1 = kiprice;
+    API banktotal = await API(Uri.parse('https://api-kichain.cosmostation.io/v1/status'));
+    banktotalbody =await banktotal.getData();
+    banktotalfinal = double.parse(jsonDecode(banktotalbody)['total_supply_tokens']['supply'][11]['amount']);
+
+    API stakingpool = await API(Uri.parse('https://api-kichain.cosmostation.io/v1/status'));
+    stakingpoolbody =await stakingpool.getData();
+    print(stakingpoolbody.runtimeType);
+    print('b');
+
+    staking = jsonDecode(stakingpoolbody)['bonded_tokens'];
+    print(kiinflation.runtimeType);
+    print(banktotalfinal.runtimeType);
+    print(staking.runtimeType);
+
+    APR=kiinflation*banktotalfinal*100/staking;
+   APR1= APR.toStringAsFixed(2);
+    print(APR);
+    // updatedKIprice1 = kiprice;
 
   }
 
@@ -272,7 +299,7 @@ class _KIState extends State<KI> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(20, 10, 5, 0),
                           child: Text(
-                            '346.1%',
+                            '$APR1',
                             textAlign: TextAlign.start,
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -301,7 +328,7 @@ class _KIState extends State<KI> {
                           Row(
                             children: [
                               Text(
-                                'inf $kiprice',
+                                'inf $kiinflation',
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
                                   fontSize: 15,

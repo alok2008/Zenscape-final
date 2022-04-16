@@ -12,11 +12,11 @@ class API{
 
     http.Response response = await http.get(url);
     if (response.statusCode == 200) {
-      String data = response.body;
-      var key =
-      jsonDecode(data)[0]['prices'][0]['current_price'];
+      dynamic data = response.body;
+      // var key =
+      // jsonDecode(data)[0]['prices'][0]['current_price'];
       // return jsonDecode(data);
-      return key;
+      return data;
     } else {
       return response.statusCode;
     }
