@@ -9,8 +9,15 @@ import 'Huahuapage.dart';
 import 'AKSPage.dart';
 import 'package:http/http.dart' as http;
 
-class NetworksPage extends StatelessWidget {
+class NetworksPage extends StatefulWidget {
   const NetworksPage({Key? key}) : super(key: key);
+
+  @override
+  State<NetworksPage> createState() => _NetworksPageState();
+}
+
+class _NetworksPageState extends State<NetworksPage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +55,7 @@ class NetworksPage extends StatelessWidget {
                             fontSize: 30,
                           ),
                         )
-                      ]),
+                      ],),
                     ),
                   ),
                 ),
@@ -103,7 +110,7 @@ class NetworksPage extends StatelessWidget {
                                 height: 3,
                               ),
                               Text(
-                                'APR-NaN%',
+                                'APR-',
                                 style: TextStyle(
 
                                   fontSize: 15,
@@ -275,7 +282,6 @@ class NetworksPage extends StatelessWidget {
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
-                                  // color: Colors.pink,
                                   color: Colors.blueGrey,
                                   blurRadius: 1.0, // soften the shadow
                                   spreadRadius:0, //extend the shadow

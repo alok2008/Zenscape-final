@@ -18,7 +18,6 @@ class KI extends StatefulWidget {
 }
 
 class _KIState extends State<KI> {
-
   dynamic kiinfbody;
   dynamic kiinflation;
   dynamic banktotalbody;
@@ -27,57 +26,51 @@ class _KIState extends State<KI> {
   dynamic staking;
   dynamic APR;
   dynamic APR1;
+  dynamic future;
+  dynamic price1;
+  dynamic pricebody;
 
   void initstate() {
     super.initState();
-    addData();
+     addData();
   }
+  
 
-  // getData() async {
+  Future<void> addData() async {
+    dynamic finalAPR;
 
-  void addData() async {
-    API inflationki = await API(Uri.parse('https://api-kichain.cosmostation.io/v1/minting/inflation'));
-    kiinfbody =await inflationki.getData();
+    API inflationki = await API(
+        Uri.parse('https://api-kichain.cosmostation.io/v1/minting/inflation'));
+    kiinfbody = await inflationki.getData();
     kiinflation = double.parse(jsonDecode(kiinfbody)['inflation']);
 
-    print(kiinflation);
-    print('a');
-    //kiinflation =jsonDecode(kiinfbody)['inflation'];
 
+    API banktotal =
+        await API(Uri.parse('https://api-kichain.cosmostation.io/v1/status'));
+    banktotalbody = await banktotal.getData();
+    banktotalfinal = double.parse(
+        jsonDecode(banktotalbody)['total_supply_tokens']['supply'][11]
+            ['amount']);
 
-    API banktotal = await API(Uri.parse('https://api-kichain.cosmostation.io/v1/status'));
-    banktotalbody =await banktotal.getData();
-    banktotalfinal = double.parse(jsonDecode(banktotalbody)['total_supply_tokens']['supply'][11]['amount']);
-
-    API stakingpool = await API(Uri.parse('https://api-kichain.cosmostation.io/v1/status'));
-    stakingpoolbody =await stakingpool.getData();
-    print(stakingpoolbody.runtimeType);
-    print('b');
-
+    API stakingpool =
+        await API(Uri.parse('https://api-kichain.cosmostation.io/v1/status'));
+    stakingpoolbody = await stakingpool.getData();
     staking = jsonDecode(stakingpoolbody)['bonded_tokens'];
-    print(kiinflation.runtimeType);
-    print(banktotalfinal.runtimeType);
-    print(staking.runtimeType);
 
-    APR=kiinflation*banktotalfinal*100/staking;
-   APR1= APR.toStringAsFixed(2);
-    print(APR);
-    // updatedKIprice1 = kiprice;
+    API price =
+    await API(Uri.parse('https://api-utility.cosmostation.io/v1/market/price?id=uxki'));
+    pricebody = await price.getData();
+    price1 = jsonDecode(pricebody)[0]['prices'][0]['current_price'];
 
+
+
+    APR = kiinflation * banktotalfinal * 100 / staking;
+    APR1 = APR.toStringAsFixed(2);
+    setState(() {
+    });
+    return finalAPR;
   }
 
-  // print(kiprice);
-  // var url =
-  //     Uri.parse("https://api-utility.cosmostation.io/v1//params/akashnet-2");
-  // http.Response response = await http.get(url);
-  // if (response.statusCode == 200) {
-  //   String data = response.body;
-  //   var key =
-  //       jsonDecode(data)['Params']['minting_params']['params']['mint_denom'];
-  //   print(key);
-  // } else {
-  //   print(response.statusCode);
-  // }
 
   // }
 
@@ -242,372 +235,380 @@ class _KIState extends State<KI> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  height: 500,
-                  width: 1000,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'DELEGATE KI',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Color(0xFFBA93DA),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: CircleAvatar(
-                              radius: 30,
-                              backgroundImage: AssetImage('lib/Ki.png'),
+      body: APR1 == null
+          ? Center(
+              child: CircularProgressIndicator(),
+                )
+          : SingleChildScrollView(
+                  child: Column(children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 500,
+                            width: 1000,
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'DELEGATE KI',
+                                        style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20,
+                                          color: Color(0xFFBA93DA),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: CircleAvatar(
+                                        radius: 30,
+                                        backgroundImage: AssetImage('lib/Ki.png'),
+                                      ),
+                                    ),
+                                    Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(10.0),
+                                          child: Text(
+                                            'KI',
+                                            style: TextStyle(
+                                              fontFamily: 'Poppins',
+                                              fontSize: 30,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                Row(children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(20, 10, 5, 0),
+                                    child: Text(
+                                      '$APR1 %',
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ]),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(20, 0, 5, 0),
+                                      child: Text(
+                                        'Annual percentage rate (APR)',
+                                        style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text(
+                                          'inf $kiinflation',
+                                          style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15),
+                                      child: Text(
+                                        'Our validator address',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Poppins',
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(15),
+                                      child: Text(
+                                        'Connect Ledger',
+                                        style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'Poppins',
+                                          color: Colors.grey,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          backgroundColor: Colors.grey,
+                                          padding: const EdgeInsets.all(10.0),
+                                          primary: Colors.white,
+                                          textStyle: const TextStyle(
+                                              fontSize: 10, fontFamily: 'Poppins'),
+                                        ),
+                                        onPressed: () {},
+                                        child: const Text('Delegate With Ledger'),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
                             ),
+                            margin: EdgeInsets.all(20.0),
+                            decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.blueGrey,
+                                    blurRadius: 1.0, // soften the shadow
+                                    spreadRadius: 0, //extend the shadow
+                                    offset: Offset(
+                                      3, // Move to right 10  horizontally
+                                      3, // Move to bottom 10 Vertically
+                                    ),
+                                  )
+                                ],
+                                color: Color(0xCCFFFFFF),
+                                borderRadius: BorderRadius.circular(10.0)),
                           ),
-                          Column(
-                            children: [
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                            height: 550,
+                            width: 1000,
+                            child: Column(children: [
                               Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: const EdgeInsets.all(12.0),
                                 child: Text(
-                                  'KI',
+                                  'Our stats on KI',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 30,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.grey,
+                                    fontSize: 20,
+                                    color: Color(0xFFBA93DA),
                                   ),
                                 ),
                               ),
-                            ],
-                          )
-                        ],
-                      ),
-                      Row(children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 10, 5, 0),
-                          child: Text(
-                            '$APR1',
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ]),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 0, 5, 0),
-                            child: Text(
-                              'Annual percentage rate (APR)',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                              ),
-                            ),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('State    Active'),
+                                      ),
 
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                'inf $kiinflation',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
+                                    ],
+
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xCCFFFFFF),
+                                      borderRadius: BorderRadius.circular(5.0)),
                                 ),
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Text(
-                              'Our validator address',
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Poppins',
-                                color: Colors.grey,
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('Price -   $price1'),
+                                      )
+                                    ],
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Text(
-                              'Connect Ledger',
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Poppins',
-                                color: Colors.grey,
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('Yield'),
+                                      )
+                                    ],
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xCCFFFFFF),
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
                               ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
-                            child: TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.grey,
-                                padding: const EdgeInsets.all(10.0),
-                                primary: Colors.white,
-                                textStyle: const TextStyle(
-                                    fontSize: 10, fontFamily: 'Poppins'),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('Lockup'),
+                                      )
+                                    ],
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
                               ),
-                              onPressed: () {},
-                              child: const Text('Delegate With Ledger'),
-                            ),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('Uptime'),
+                                      )
+                                    ],
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xCCFFFFFF),
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('Fee'),
+                                      )
+                                    ],
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('Delegator Amount'),
+                                      )
+                                    ],
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      color: Color(0xCCFFFFFF),
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 50,
+                                  child: Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Text('Total Delegation'),
+                                      )
+                                    ],
+                                  ),
+                                  margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5.0)),
+                                ),
+                              ),
+                            ]),
+                            margin: EdgeInsets.all(20),
+                            decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.blueGrey,
+                                    blurRadius: 1.0, // soften the shadow
+                                    spreadRadius: 0, //extend the shadow
+                                    offset: Offset(
+                                      3, // Move to right 10  horizontally
+                                      3, // Move to bottom 10 Vertically
+                                    ),
+                                  )
+                                ],
+                                color: Color(0xCCFFFFFF),
+                                borderRadius: BorderRadius.circular(10.0)),
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  margin: EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.blueGrey,
-                          blurRadius: 1.0, // soften the shadow
-                          spreadRadius: 0, //extend the shadow
-                          offset: Offset(
-                            3, // Move to right 10  horizontally
-                            3, // Move to bottom 10 Vertically
-                          ),
-                        )
+                        ),
                       ],
-                      color: Color(0xCCFFFFFF),
-                      borderRadius: BorderRadius.circular(10.0)),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  height: 550,
-                  width: 1000,
-                  child: Column(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(
-                        'Our stats on KI',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Color(0xFFBA93DA),
-                        ),
-                      ),
                     ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('State'),
-                            )
-                          ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(28.0),
+                          child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => KICalculator(APR: APR1,Price: price1,Staking: staking,),
+                                    ));
+                                ;
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Text('Stake >'),
+                              )),
                         ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Price'),
-                            )
-                          ],
-                        ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Yield'),
-                            )
-                          ],
-                        ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Lockup'),
-                            )
-                          ],
-                        ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Uptime'),
-                            )
-                          ],
-                        ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Fee'),
-                            )
-                          ],
-                        ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Delegator Amount'),
-                            )
-                          ],
-                        ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            color: Color(0xCCFFFFFF),
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
-                    Expanded(
-                      child: Container(
-                        height: 50,
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text('Total Delegation'),
-                            )
-                          ],
-                        ),
-                        margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0)),
-                      ),
-                    ),
+                      ],
+                    )
                   ]),
-                  margin: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.blueGrey,
-                          blurRadius: 1.0, // soften the shadow
-                          spreadRadius: 0, //extend the shadow
-                          offset: Offset(
-                            3, // Move to right 10  horizontally
-                            3, // Move to bottom 10 Vertically
-                          ),
-                        )
-                      ],
-                      color: Color(0xCCFFFFFF),
-                      borderRadius: BorderRadius.circular(10.0)),
                 ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(28.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const KICalculator(),
-                          ));
-                      ;
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text('Stake >'),
-                    )),
-              ),
-            ],
-          )
-        ]),
-      ),
-    );
+          );
   }
 }
