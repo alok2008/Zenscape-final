@@ -13,9 +13,6 @@ class API{
     http.Response response = await http.get(url);
     if (response.statusCode == 200) {
       dynamic data = response.body;
-      // var key =
-      // jsonDecode(data)[0]['prices'][0]['current_price'];
-      // return jsonDecode(data);
       return data;
     } else {
       return response.statusCode;

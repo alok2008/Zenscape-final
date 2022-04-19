@@ -15,7 +15,7 @@ class CHI extends StatefulWidget {
 }
 
 class _CHIState extends State<CHI> {
-  double _value=0;
+  double _value = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -176,335 +176,324 @@ class _CHIState extends State<CHI> {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  height: 500,
-                  width: 1000,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Row(
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('lib/register.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Column(children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 500,
+                    width: 1000,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                'DELEGATE CHIHUAHUA',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                  color: Color(0xFFBA93DA),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Row(
                           children: [
-                            Text(
-                              'DELEGATE CHIHUAHUA',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                                color: Color(0xFFBA93DA),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: CircleAvatar(
+                                radius: 30,
+                                backgroundImage: AssetImage('lib/Akash.jpeg'),
                               ),
+                            ),
+                            Column(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    'CHIHUAHUA',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             )
                           ],
                         ),
-                      ),
-                      Row(
-                        children: [
+                        Row(children: [
                           Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: CircleAvatar(
-                              radius: 30,
-                              backgroundImage: AssetImage('lib/Akash.jpeg'),
-                            ),
-                          ),
-                          Column(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  'CHIHUAHUA',
-                                  style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                      Row(children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 10, 5, 0),
-                          child: Text(
-                            '346.1%',
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 40,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ),
-                      ]),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(20, 0, 5, 0),
+                            padding: const EdgeInsets.fromLTRB(20, 10, 5, 0),
                             child: Text(
-                              'Annual percentage rate (APR)',
+                              '346.1%',
+                              textAlign: TextAlign.start,
                               style: TextStyle(
                                 fontFamily: 'Poppins',
-                                fontSize: 15,
+                                fontSize: 40,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black,
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Text(
-                              'Our validator address',
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Poppins',
-                                color: Colors.grey,
+                        ]),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(20, 0, 5, 0),
+                              child: Text(
+                                'Annual percentage rate (APR)',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Text(
-                              'Connect Ledger',
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Poppins',
-                                color: Colors.grey,
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(15),
+                              child: Text(
+                                'Our validator address',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Poppins',
+                                  color: Colors.grey,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
-                            child: TextButton(
-                              style: TextButton.styleFrom(
-                                backgroundColor: Colors.grey,
-                                padding: const EdgeInsets.all(10.0),
-                                primary: Colors.white,
-                                textStyle: const TextStyle(
-                                    fontSize: 10, fontFamily: 'Poppins'),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(15),
+                              child: Text(
+                                'Connect Ledger',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Poppins',
+                                  color: Colors.grey,
+                                ),
                               ),
-                              onPressed: () {},
-                              child: const Text('Delegate With Ledger'),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  margin: EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.blueGrey,
-                          blurRadius: 1.0, // soften the shadow
-                          spreadRadius: 0, //extend the shadow
-                          offset: Offset(
-                            3, // Move to right 10  horizontally
-                            3, // Move to bottom 10 Vertically
-                          ),
-                        )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                              child: TextButton(
+                                style: TextButton.styleFrom(
+                                  backgroundColor: Colors.grey,
+                                  padding: const EdgeInsets.all(10.0),
+                                  primary: Colors.white,
+                                  textStyle: const TextStyle(
+                                      fontSize: 10, fontFamily: 'Poppins'),
+                                ),
+                                onPressed: () {},
+                                child: const Text('Delegate With Ledger'),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
-                      color: Color(0xCCFFFFFF),
-                      borderRadius: BorderRadius.circular(10.0)),
-                ),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  height: 550,
-                  width: 1000,
-                  child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            'Our stats on CHIHUAHUA',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Color(0xFFBA93DA),
+                    ),
+                    margin: EdgeInsets.all(20.0),
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blueGrey,
+                            blurRadius: 1.0, // soften the shadow
+                            spreadRadius: 0, //extend the shadow
+                            offset: Offset(
+                              3, // Move to right 10  horizontally
+                              3, // Move to bottom 10 Vertically
                             ),
-                          ),
-                        ),
-
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('State')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('Price')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('Yield')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('Lockup')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('Uptime')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('Fee')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('Delegator Amount')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Text('Total Delegation')],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-                        ),
-                      ]
+                          )
+                        ],
+                        color: Color(0xCCFFFFFF),
+                        borderRadius: BorderRadius.circular(10.0)),
                   ),
-                  margin: EdgeInsets.all(20),
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.blueGrey,
-                          blurRadius: 1.0, // soften the shadow
-                          spreadRadius: 0, //extend the shadow
-                          offset: Offset(
-                            3, // Move to right 10  horizontally
-                            3, // Move to bottom 10 Vertically
-                          ),
-                        )
-                      ],
-                      color: Color(0xCCFFFFFF),
-                      borderRadius: BorderRadius.circular(10.0)),
                 ),
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(28.0),
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HUAHUACalculator(),
-                          ));
-                      ;
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text('Stake >'),
-                    )),
-              ),
-            ],
-          )
-        ]),
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 550,
+                    width: 1000,
+                    child: Column(children: [
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: Text(
+                          'Our stats on CHIHUAHUA',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Color(0xFFBA93DA),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('State')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              color: Color(0xCCFFFFFF),
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('Price')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('Yield')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              color: Color(0xCCFFFFFF),
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('Lockup')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('Uptime')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              color: Color(0xCCFFFFFF),
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('Fee')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('Delegator Amount')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              color: Color(0xCCFFFFFF),
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 50,
+                          child: Row(
+                            children: [Text('Total Delegation')],
+                          ),
+                          margin: EdgeInsets.fromLTRB(10, 10, 10, 5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5.0)),
+                        ),
+                      ),
+                    ]),
+                    margin: EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blueGrey,
+                            blurRadius: 1.0, // soften the shadow
+                            spreadRadius: 0, //extend the shadow
+                            offset: Offset(
+                              3, // Move to right 10  horizontally
+                              3, // Move to bottom 10 Vertically
+                            ),
+                          )
+                        ],
+                        color: Color(0xCCFFFFFF),
+                        borderRadius: BorderRadius.circular(10.0)),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(28.0),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HUAHUACalculator(),
+                            ));
+                        ;
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text('Stake >'),
+                      )),
+                ),
+              ],
+            )
+          ]),
+        ),
       ),
     );
   }

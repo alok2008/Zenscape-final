@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../Stakingpage.dart';
 
 class HUAHUACalculator extends StatefulWidget {
   const HUAHUACalculator({Key? key}) : super(key: key);
@@ -147,7 +146,6 @@ class _HUAHUACalculatorState extends State<HUAHUACalculator> {
                 setState(() {
                   ki = double.parse(_ki);
 
-                  print(ki);
                 });
               },
               keyboardType: TextInputType.number,

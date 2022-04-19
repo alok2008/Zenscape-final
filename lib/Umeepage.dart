@@ -175,7 +175,13 @@ class _UmeeState extends State<Umee> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
+      body: SingleChildScrollView(child: Container(
+    decoration: BoxDecoration(
+    image: DecorationImage(
+    image: AssetImage('lib/register.png'),
+    fit: BoxFit.cover,
+    ),
+    ),
         child: Column(children: [
           Row(
             children: [
@@ -536,6 +542,6 @@ class _UmeeState extends State<Umee> {
           )
         ],),
       ),
-    );
+    ),);
   }
 }

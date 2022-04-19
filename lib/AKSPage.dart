@@ -177,6 +177,13 @@ class _AKTState extends State<AKT> {
         ),
       ),
       body: SingleChildScrollView(
+    child: Container(
+    decoration: BoxDecoration(
+    image: DecorationImage(
+    image: AssetImage('lib/register.png'),
+    fit: BoxFit.cover,
+    ),
+    ),
         child: Column(children: [
           Row(
             children: [
@@ -531,6 +538,6 @@ class _AKTState extends State<AKT> {
           )
         ]),
       ),
-    );
+    ),);
   }
 }
