@@ -79,7 +79,7 @@ class _KIState extends State<KI> {
     await API(Uri.parse('https://api-kichain.cosmostation.io/v1/status'));
     bondedtknbody = await bondedtknC.getData();
     bondedtkn = (jsonDecode(bondedtknbody)['bonded_tokens']);
-    print(bondedtkn);
+    // print(bondedtkn);
 
 
 

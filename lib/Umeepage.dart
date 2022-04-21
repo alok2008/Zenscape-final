@@ -348,158 +348,214 @@ class _UmeeState extends State<Umee> {
             children: [
               Expanded(
                 child: Container(
-                  height: 550,
-                  width: 1000,
-                  child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            'Our stats on Umee',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Color(0xFFBA93DA),
+                  child: Center(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Our stats on KI',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color(0xFFBA93DA),
+                              ),
                             ),
                           ),
-                        ),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Table(children: [
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'State',
+                                    style: const TextStyle(
+                                      fontSize: 15,
 
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Active',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Price',
+                                    style: const TextStyle(
+                                      fontSize: 15,
 
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('State'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'price1',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Yield',
+                                    style: const TextStyle(
+                                      fontSize: 15,
 
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Lock Up',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Uptime',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Fee',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Delegator Amount',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Total Delegation',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+
+                            ]),
                           ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Price'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Yield'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Lockup'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Uptime'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Fee'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Delegator Amount'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Total Delegation'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-                        ),
-                      ]
-                  ),
-                  margin: EdgeInsets.all(20),
+                        ],
+                      )),
+                  margin: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -512,7 +568,7 @@ class _UmeeState extends State<Umee> {
                           ),
                         )
                       ],
-                      color: Color(0xCCFFFFFF),
+                      color: const Color(0xCCFFFFFF),
                       borderRadius: BorderRadius.circular(10.0)),
                 ),
               ),

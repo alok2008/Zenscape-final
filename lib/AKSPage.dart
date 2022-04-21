@@ -53,7 +53,7 @@ class _AKTState extends State<AKT> {
                 child: Container(
                   child: Row(
                     children: [
-                      Icon(Icons.network_wifi),
+                      Icon(Icons.kayaking_sharp),
                       TextButton(
                         child: const Text('KI'),
                         onPressed: () {
@@ -73,7 +73,7 @@ class _AKTState extends State<AKT> {
                 child: Container(
                   child: Row(
                     children: [
-                      Icon(Icons.question_answer_outlined),
+                      Icon(Icons.umbrella),
                       TextButton(
                         child: const Text('UMEE'),
                         onPressed: () {
@@ -94,7 +94,7 @@ class _AKTState extends State<AKT> {
                 child: Container(
                   child: Row(
                     children: [
-                      Icon(Icons.phone),
+                      Icon(Icons.outbond),
                       TextButton(
                         child: const Text('OMNIFLIX'),
                         onPressed: () {
@@ -115,7 +115,7 @@ class _AKTState extends State<AKT> {
                 child: Container(
                   child: Row(
                     children: [
-                      Icon(Icons.phone),
+                      Icon(Icons.attach_money),
                       TextButton(
                         child: const Text('ASSETMANTLE'),
                         onPressed: () {
@@ -136,7 +136,7 @@ class _AKTState extends State<AKT> {
                 child: Container(
                   child: Row(
                     children: [
-                      Icon(Icons.phone),
+                      Icon(Icons.location_searching),
                       TextButton(
                         child: const Text('CHIHUAHUA'),
                         onPressed: () {
@@ -157,7 +157,7 @@ class _AKTState extends State<AKT> {
                 child: Container(
                   child: Row(
                     children: [
-                      Icon(Icons.phone),
+                      Icon(Icons.cloud),
                       TextButton(
                         child: const Text('AKASH'),
                         onPressed: () {
@@ -345,158 +345,214 @@ class _AKTState extends State<AKT> {
             children: [
               Expanded(
                 child: Container(
-                  height: 550,
-                  width: 1000,
-                  child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Text(
-                            'Our stats on Umee',
-                            style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Color(0xFFBA93DA),
+                  child: Center(
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Our stats on KI',
+                              style: TextStyle(
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Color(0xFFBA93DA),
+                              ),
                             ),
                           ),
-                        ),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Table(children: [
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'State',
+                                    style: const TextStyle(
+                                      fontSize: 15,
 
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Active',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Price',
+                                    style: const TextStyle(
+                                      fontSize: 15,
 
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('State'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'price1',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Yield',
+                                    style: const TextStyle(
+                                      fontSize: 15,
 
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Lock Up',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Uptime',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Fee',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Delegator Amount',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+                              TableRow(children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    'Total Delegation',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Text(
+                                    '--',
+                                    style: const TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ]),
+
+                            ]),
                           ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Price'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Yield'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Lockup'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Uptime'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Fee'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Delegator Amount'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                color: Color(0xCCFFFFFF),
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-
-                        ),
-                        Expanded(
-                          child:Container(
-                            height: 50,
-                            child: Row(
-
-                              children: [Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('Total Delegation'),
-                              )],),
-                            margin: EdgeInsets.fromLTRB(10,10,10,5),
-                            decoration: BoxDecoration(
-
-                                borderRadius: BorderRadius.circular(5.0)),
-                          ),
-                        ),
-                      ]
-                  ),
-                  margin: EdgeInsets.all(20),
+                        ],
+                      )),
+                  margin: const EdgeInsets.all(20.0),
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -509,7 +565,7 @@ class _AKTState extends State<AKT> {
                           ),
                         )
                       ],
-                      color: Color(0xCCFFFFFF),
+                      color: const Color(0xCCFFFFFF),
                       borderRadius: BorderRadius.circular(10.0)),
                 ),
               ),

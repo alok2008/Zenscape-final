@@ -17,211 +17,334 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
     double _value = 0;
     return Scaffold(
       appBar: AppBar(
-        title: Text('UMEE CALCULATOR',
+        title: const Text('UMEE CALCULATOR',
             style: TextStyle(
+              fontFamily: 'Poppins',
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             )),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Color(0xFF0A0E40),
       ),
-      body: Column(
-
-
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: Container(
-                  child: Center(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(25),
-                            child: Text(
-                              'DELEGATED ASSET',
-                              style: TextStyle(
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [],
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [],
-                          ),
-                        ],
-                      )),
-                  margin: EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                      color: Color(0xFF1D1e33),
-                      borderRadius: BorderRadius.circular(10.0)),
-                ),
+      body: SingleChildScrollView(
+          child: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('lib/register.png'),
+                fit: BoxFit.cover,
               ),
-              Expanded(
-                child: Container(
-                  child: Center(
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(25),
-                            child: Text(
-                              'APR',
-                              style: TextStyle(
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [],
-                          ),
-                        ],
-                      )),
-                  margin: EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                      color: Color(0xFF1D1e33),
-                      borderRadius: BorderRadius.circular(10.0)),
-                ),
-              ),
-            ],
-          ),
-          Expanded(
+            ),
             child: Container(
-              child: Center(
-                  child: Row(
+              height: 730,
+              width: 400,
+              child: Column(
+                children: [
+                  Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'COMMISSION ',
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
+                      Expanded(
+                        child: Container(
+                          child: Center(
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Table(children: [
+                                      TableRow(children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'Delegated Asset',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'thisStaking',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                      TableRow(children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'APR',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'thisAPR',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                      TableRow(children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'Voting Power',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'thisvotingpower',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                    ]),
+                                  ),
+                                ],
+                              )),
+                          margin: const EdgeInsets.all(20.0),
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF1D1e33),
+                              borderRadius: BorderRadius.circular(10.0)),
+                        ),
                       ),
                     ],
-                  )),
-              margin: EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                  color: Color(0xFF1D1e33),
-                  borderRadius: BorderRadius.circular(10.0)),
-            ),
-          ),
-          Text(
-            'Amount in UMEE',
-            style: TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-          Container(
-            child: TextField(
-              controller: nameController,
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-              decoration: InputDecoration(
-                hintText: 'Amount in UMEE',
-                border: OutlineInputBorder(),
-                labelText: 'Amount in UMEE',
-              ),
-              onChanged: (_ki) {
-                setState(() {
-                  ki = double.parse(_ki);
-
-                  print(ki);
-                });
-              },
-              keyboardType: TextInputType.number,
-            ),
-            margin: EdgeInsets.all(20.0),
-            decoration: BoxDecoration(
-              color: Color(0xFF1D1e33),
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-          ),
-          Icon(
-            Icons.autorenew,
-            color: Colors.pink,
-            size: 30.0,
-          ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
-            child: Text(
-              'Amount in USD',
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Text(
-                      ki.toStringAsFixed(1),
-                      style: TextStyle(
-                        fontSize: 11,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(20, 8, 0, 0),
+                        child: const Text(
+                          'Amount in KI',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
+                    ],
+                  ),
+                  Container(
+                    child: TextField(
+                      // controller: kiController,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      decoration: const InputDecoration(
+                        hintText: 'Amount in KI',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (abc) {
+                        setState(() {
+                          // usdController.text =
+                          //     (double.parse(abc) * double.parse('$thisPrice'))
+                          //         .toStringAsFixed(2);
+                        });
+                      },
+                      keyboardType: TextInputType.number,
                     ),
+                    margin: const EdgeInsets.fromLTRB(20.0, 8, 20, 0),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: const Icon(
+                      Icons.autorenew,
+                      color: Colors.pink,
+                      size: 40.0,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                        child: Text(
+                          'Amount in USD',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: TextField(
+                      // controller: usdController,
+                      style: const TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                      enabled: true,
+                      decoration: const InputDecoration(
+                        hintText: 'Amount in USD',
+                        border: OutlineInputBorder(),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          // kiController.text = ((double.parse(value) /
+                          //     double.parse('$thisPrice')))
+                          //     .toStringAsFixed(2);
+                        });
+                      },
+                      keyboardType: TextInputType.number,
+                    ),
+                    margin: const EdgeInsets.fromLTRB(20.0, 10.0, 20, 10),
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          child: Center(
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(20.0),
+                                    child: Table(children: [
+                                      TableRow(children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'Daily Reward',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'dailyreward',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                      TableRow(children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'Monthly Reward',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'monthlyreward',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                      TableRow(children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'Annual Reward',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            'annualreward',
+                                            style: const TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ),
+                                      ]),
+                                    ]),
+                                  ),
+                                ],
+                              )),
+                          margin: const EdgeInsets.all(20.0),
+                          decoration: BoxDecoration(
+                              color: const Color(0xFF1D1e33),
+                              borderRadius: BorderRadius.circular(10.0)),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(28.0),
+                        child: ElevatedButton(
+                            onPressed: () {
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.all(20.0),
+                              child: Text('Stake >'),
+                            ),
+                            style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Color(0xFF444B59)),
+                            )),
+                      ),
+                    ],
                   ),
                 ],
               ),
-              margin: EdgeInsets.fromLTRB(18, 30, 18, 30),
-              decoration: BoxDecoration(
-                color: Color(0xFF1D1e33),
-                borderRadius: BorderRadius.circular(10.0),
-              ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(28.0),
-                child: ElevatedButton(
+        ),
+      );
 
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const UmeeCalculator(),
-                          ));
-                      ;
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text('Stake >'),
-                    )),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
   }
 }

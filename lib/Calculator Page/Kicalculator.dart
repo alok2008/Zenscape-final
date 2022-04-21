@@ -39,9 +39,9 @@ class _KICalculatorState extends State<KICalculator> {
     thisPrice = widget.Price;
     thisStaking = widget.Staking;
     thisvotingpower = widget.votingpower;
-   dailyreward = ((double.parse(kiController.text)*double.parse(thisAPR))/365).toStringAsFixed(4);
-    monthlyreward = ((double.parse(kiController.text)*double.parse(thisAPR))/12).toStringAsFixed(4);
-    annualreward = ((double.parse(kiController.text)*double.parse(thisAPR))).toStringAsFixed(4);
+   dailyreward = ((double.parse(kiController.text)*double.parse(thisAPR)/100)/365).toStringAsFixed(4);
+    monthlyreward = ((double.parse(kiController.text)*double.parse(thisAPR)/100)/12).toStringAsFixed(4);
+    annualreward = ((double.parse(kiController.text)*double.parse(thisAPR)/100)).toStringAsFixed(4);
 
   }
 
