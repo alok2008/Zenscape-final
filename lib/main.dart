@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'ContactUs.dart';
 import 'NetworksPage.dart';
 import 'WhyUs.dart';
@@ -49,45 +50,54 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation : 0,
-
       ),
-      bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: SizedBox(
+        height: 80,
+        child: BottomNavigationBar(
 
-        showUnselectedLabels: false,
-        iconSize: 25,
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
-        items: [
-          BottomNavigationBarItem(
-              icon: IconButton(
-                icon: Icon(Icons.home),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomePage()),
-                  );
-                },
-              ),
-              label: 'Home',
-              backgroundColor: Colors.blueGrey),
-          BottomNavigationBarItem(
-              icon: IconButton(
-                icon: const Icon(Icons.now_widgets_rounded),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const NetworksPage()),
-                  );
-                },
-              ),
-              label: 'Networks',
-              backgroundColor: Colors.blueGrey),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-              backgroundColor: Colors.blueGrey),
-        ],
+          showUnselectedLabels: false,
+          iconSize: 25,
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.black,
+
+          currentIndex: currentIndex,
+          onTap: (index) => setState(() => currentIndex = index),
+          items: [
+            BottomNavigationBarItem(
+                icon: IconButton(
+                  icon: Icon(Icons.home),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomePage()),
+                    );
+                  },
+                ),
+                label: 'Home',
+                backgroundColor: Colors.white),
+            BottomNavigationBarItem(
+                icon: IconButton(
+                  icon: const Icon(Icons.now_widgets_rounded),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const NetworksPage()),
+                    );
+                  },
+                ),
+                label: 'Networks',
+                backgroundColor: Colors.white),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+                backgroundColor: Colors.white),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.more_horiz_rounded),
+                label: 'Profile',
+                backgroundColor: Colors.white),
+          ],
+        ),
       ),
       drawer: Drawer(
         child: ListView(
@@ -160,87 +170,110 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ],
         ),
       ),
-      body: Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
+      body: PageView(
+        children: [SingleChildScrollView(
+          child: Container(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // SizedBox(height: 40),
+                  SafeArea(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(14.0),
+                          child: Image.asset('lib/Zenscape-logo.png'),),
+                          Text(
+                            'ZENSCAPE',
+                            style: TextStyle(
+                                fontFamily: 'Cuprum',
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Container(
+                    height: 270,
+                    width: 350,
+                    child: Lottie.asset('asset/87290-staking.json'),
+                  ),
+                  Text(
+                    'STAKERS',
+                    style: TextStyle(
+                      fontFamily: 'Cuprum',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                      color: Color(0xFF444B59),
+                    ),
+                  ),
+                  Text(
+                    'GONNA STAKE!',
+                    style: TextStyle(
+                      fontFamily: 'Cuprum',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                      color: Color(0xFF444B59),
+                    ),
+                  ),
+                  SizedBox(height: 20),
                   Padding(
-                    padding: const EdgeInsets.all(14.0),
-                    child: Text(
-                      'ZENSCAPE',
-                      style: TextStyle(
-                          fontFamily: 'Cuprum',
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                    padding: const EdgeInsets.fromLTRB(25,0,25,0),
+                    child: Container(
+                      child: Center(
+                        child: Text(
+                          'Enterprise-grade level infrastructure for Defi degens to stake their crypto assets and earn yields on it.',
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF444B59),
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Center(
+                    child: ElevatedButton(
+
+                      child: const Text('Stake Now >>'),
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Color(0xFF444B59)),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const NetworksPage()),
+                        );
+                      },
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: 120,
-              ),
-              Container(
-                child: Text(
-                  'STAKERS \nGONNA STAKE!',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
-                    color: Color(0xFF444B59),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Center(
-                    child: Text(
-                      'Enterprise-grade level infrastructure for Defi degens to stake their crypto assets and earn yields on it.',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF64C5EA),
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Center(
-                child: ElevatedButton(
-
-                  child: const Text('Stake Now >>'),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Color(0xFF444B59)),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const NetworksPage()),
-                    );
-                  },
-                ),
-              ),
-            ],
+            ),
+            // decoration: BoxDecoration(
+            //   image: DecorationImage(
+            //     image: AssetImage('lib/login.png'),
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
           ),
         ),
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('lib/login.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
+        // WhyUs(),
+        //     ContactUs()],
+      ]),
     );
   }
 }

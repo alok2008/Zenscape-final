@@ -9,6 +9,7 @@ import 'AKSPage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'APIs/Apis.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class KI extends StatefulWidget {
   const KI({Key? key}) : super(key: key);
@@ -105,8 +106,16 @@ class _KIState extends State<KI> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('KI'),
-        backgroundColor: Color(0xFF0A0E40),
+        foregroundColor: Colors.black,
+        title: Text('KI',
+        style: TextStyle(
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.bold,
+          fontSize: 25,
+          color: Colors.black,
+        ),),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       drawer: Drawer(
         child: ListView(
@@ -262,18 +271,21 @@ class _KIState extends State<KI> {
       ),
       body: APR1 == null
           ? Center(
-              child: CircularProgressIndicator(),
+              child: SpinKitDoubleBounce(
+                color: Colors.blue,
+                size:60,
+              ),
                 )
           : RefreshIndicator(
         onRefresh: addData,
             child: SingleChildScrollView(
                     child: Container(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage('lib/register.png'),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                      // decoration: BoxDecoration(
+                      //   image: DecorationImage(
+                      //     image: AssetImage('lib/register.png'),
+                      //     fit: BoxFit.cover,
+                      //   ),
+                      // ),
                       child: Column(children: [
                         Row(
                           children: [
@@ -430,11 +442,13 @@ class _KIState extends State<KI> {
                                         spreadRadius: 0, //extend the shadow
                                         offset: Offset(
                                           3, // Move to right 10  horizontally
-                                          3, // Move to bottom 10 Vertically
+                                          3, // Move to bottom 10 Vetically
                                         ),
                                       )
                                     ],
-                                    color: Color(0xCCFFFFFF),
+                                    gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+
+                                    color: Color(0xCCFFFFFF).withOpacity(1),
                                     borderRadius: BorderRadius.circular(10.0)),
                               ),
                             ),
@@ -664,7 +678,9 @@ class _KIState extends State<KI> {
                                         ),
                                       )
                                     ],
-                                    color: const Color(0xCCFFFFFF),
+                                    gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+
+                                    color: const Color(0xCCFFFFFF).withOpacity(1),
                                     borderRadius: BorderRadius.circular(10.0)),
                               ),
                             ),

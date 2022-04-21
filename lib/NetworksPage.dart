@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zenscape_final/Calculator%20Page/Kicalculator.dart';
 import 'ContactUs.dart';
 import 'WhyUs.dart';
 import 'kipage.dart';
@@ -40,7 +41,20 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        foregroundColor: Colors.black,
+        title: Text('NETWORKS',
+        style: TextStyle(
+          color: Colors.black,
+
+        ),),
+        backgroundColor: Colors.transparent,
+        elevation : 0,
+      ),
+
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
         showUnselectedLabels: false,
         iconSize: 25,
         currentIndex: currentIndex,
@@ -57,7 +71,7 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                 },
               ),
               label: 'Home',
-              backgroundColor: Colors.blueGrey),
+              backgroundColor: Colors.white),
           BottomNavigationBarItem(
               icon: IconButton(
                 icon: const Icon(Icons.now_widgets_rounded),
@@ -70,64 +84,42 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                 },
               ),
               label: 'Networks',
-              backgroundColor: Colors.blueGrey),
+              backgroundColor: Colors.white),
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Profile',
-              backgroundColor: Colors.blueGrey),
+              backgroundColor: Colors.white),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+              backgroundColor: Colors.white),
         ],
       ),
       body: SingleChildScrollView(child:
 
-        AnimatedContainer(
-          duration: Duration(milliseconds:400),
+        Container(
           height: 800,
        width: 500,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('lib/register.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage('lib/register.png'),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
         child: PageView(
           children: <Widget>[
             Column(
               children: <Widget>[
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SafeArea(
-                      child: Row(children: [
-                        IconButton(
-                          icon: Icon(
-                            Icons.arrow_back_outlined,
-                          ),
-                          iconSize: 30,
-                          color: Colors.black,
-                          splashColor: Colors.purple,
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
-                        Text(
-                          'NETWORKS',
-                          style: TextStyle(
-                            fontFamily: 'Cuprum',
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                          ),
-                        )
-                      ],),
-                    ),
-                  ),
-                ),
-                Container(
-                    child: Row(
-                  children: [
-                    Container(
-                      width: 195,
-                      height: 200,
+
+                Expanded(
+                  child: Container(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+
+                          color: Color(0xFFE8DCF8).withOpacity(1),
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -135,79 +127,69 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                               MaterialPageRoute(
                                 builder: (context) => const KI(),
                               ));
-                        },
-                        child: Container(
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Hero(
-                                tag: 'Kilogo',
-                                child: CircleAvatar(
-                                  radius: 40,
-                                  backgroundImage: AssetImage('lib/Ki.png'),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Ki',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  Text(
-                                    '  (XKI)',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 3,
-                              ),
-                              // Text(
-                              //   'APR-',
-                              //   style: TextStyle(
-                              //
-                              //     fontSize: 15,
-                              //     fontWeight: FontWeight.bold,
-                              //     color: Colors.white,
-                              //   ),
-                              // ),
-                            ],
-                          )),
-                          margin: EdgeInsets.fromLTRB(5,12,5,12),
-                          decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.blueGrey,
-                                  blurRadius: 1.0, // soften the shadow
-                                  spreadRadius:0, //extend the shadow
-                                  offset: Offset(
-                                    3, // Move to right 10  horizontally
-                                    3, // Move to bottom 10 Vertically
-                                  ),
-                                )
-                              ],
 
-                              color: Color(0xFF1D1e33),
-                              borderRadius: BorderRadius.circular(10.0)),
-                        ),
+                        },
+                        child: Center(
+                            child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Hero(
+                              tag: 'Kilogo',
+                              child: CircleAvatar(
+                                radius: 25,
+                                backgroundImage: AssetImage('lib/Ki.png'),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Text(
+                                  'Ki',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                Text(
+                                  '  (XKI)',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: 3,
+                            ),
+                            // Text(
+                            //   'APR-',
+                            //   style: TextStyle(
+                            //
+                            //     fontSize: 15,
+                            //     fontWeight: FontWeight.bold,
+                            //     color: Colors.white,
+                            //   ),
+                            // ),
+                          ],
+                        )),
                       ),
                     ),
-                    Container(
-                      width: 195,
-                      height: 200,
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+                          color: Color(0xFFE3F6FD).withOpacity(1),
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -216,82 +198,66 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                                 builder: (context) => const Umee(),
                               ));
                         },
-                        child: Container(
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage('lib/Umee.jpeg'),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    'Umee',
-                                    style: TextStyle(
-                                      fontSize: 25,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
+                        child: Center(
+                          child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              backgroundImage: AssetImage('lib/Umee.jpeg'),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Umee',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
                                   ),
-                                  SizedBox(
-                                  height: 3,
+                                ),
+                                SizedBox(
+                                width: 3,
+                                ),
+                                Text(
+                                  ' (UMEE)',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
                                   ),
-                                  Text(
-                                    ' (UMEE)',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              // Text(
-                              //   'APR-53.35%',
-                              //   style: TextStyle(
-                              //     fontSize: 15,
-                              //     fontWeight: FontWeight.bold,
-                              //     color: Colors.white,
-                              //   ),
-                              // ),
-                            ],
-                          )),
-                          margin: EdgeInsets.fromLTRB(5,12,5,12),
-                          decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  // color: Colors.pink,
-                                  color: Colors.blueGrey,
-                                  blurRadius: 1.0, // soften the shadow
-                                  spreadRadius:0, //extend the shadow
-                                  offset: Offset(
-                                    3, // Move to right 10  horizontally
-                                    3, // Move to bottom 10 Vertically
-                                  ),
-                                )
+                                ),
                               ],
-                              color: Color(0xFF1D1e33),
-                              borderRadius: BorderRadius.circular(10.0)),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            // Text(
+                            //   'APR-53.35%',
+                            //   style: TextStyle(
+                            //     fontSize: 15,
+                            //     fontWeight: FontWeight.bold,
+                            //     color: Colors.white,
+                            //   ),
+                            // ),
+                          ],
+                        ),
                         ),
                       ),
                     ),
-                  ],
-                )),
-                Container(
-                    child: Row(
-                  children: [
-                    Container(
-                      width: 195,
-                      height: 200,
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+                          color: Color(0xFFE8DCF8).withOpacity(1),
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -301,70 +267,51 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                               ));
                           ;
                         },
-                        child: Container(
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundImage:
-                                    AssetImage('lib/Omniflix.jpeg'),
+                        child: Center(
+                            child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              backgroundImage:
+                                  AssetImage('lib/Omniflix.jpeg'),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Omniflix',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              SizedBox(
-                                height: 10,
+                            ),
+                            SizedBox(
+                              width: 3,
+                            ),
+                            Text(
+                              '(FLIX)',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              Text(
-                                'Omniflix',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 3,
-                              ),
-                              Text(
-                                '(FLIX)',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-
-                              // Text(
-                              //   'APR-NaN%',
-                              //   style: TextStyle(
-                              //     fontSize: 15,
-                              //     fontWeight: FontWeight.bold,
-                              //     color: Colors.white,
-                              //   ),
-                              // ),
-                            ],
-                          )),
-                          margin: EdgeInsets.fromLTRB(5,12,5,12),
-                          decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.blueGrey,
-                                  blurRadius: 1.0, // soften the shadow
-                                  spreadRadius:0, //extend the shadow
-                                  offset: Offset(
-                                    3, // Move to right 10  horizontally
-                                    3, // Move to bottom 10 Vertically
-                                  ),
-                                )
-                              ],
-                              color: Color(0xFF1D1e33),
-                              borderRadius: BorderRadius.circular(10.0)),
-                        ),
+                            ),
+                          ],
+                        )),
                       ),
                     ),
-                    Container(
-                      width: 195,
-                      height: 200,
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+
+                          color: Color(0xFFE3F6FD).withOpacity(1),
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -374,70 +321,46 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                               ));
                           ;
                         },
-                        child: Container(
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage('lib/MNTL.jpeg'),
+                        child: Center(
+                            child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              backgroundImage: AssetImage('lib/MNTL.jpeg'),
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              'AssetMantle',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              SizedBox(height: 10),
-                              Text(
-                                'AssetMantle',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                            ),
+                            SizedBox(width: 3),
+                            Text(
+                              '(MNTL)',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              SizedBox(height: 3),
-                              Text(
-                                '(MNTL)',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              // Text(
-                              //   'APR-25.1%',
-                              //   style: TextStyle(
-                              //     fontSize: 15,
-                              //     fontWeight: FontWeight.bold,
-                              //     color: Colors.white,
-                              //   ),
-                              // ),
-                            ],
-                          )),
-                          margin: EdgeInsets.fromLTRB(5,12,5,12),
-                          decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  // color: Colors.pink,
-                                  color: Colors.blueGrey,
-                                  blurRadius: 1.0, // soften the shadow
-                                  spreadRadius:0, //extend the shadow
-                                  offset: Offset(
-                                    3, // Move to right 10  horizontally
-                                    3, // Move to bottom 10 Vertically
-                                  ),
-                                )
-                              ],
-                              color: Color(0xFF1D1e33),
-                              borderRadius: BorderRadius.circular(10.0)),
-                        ),
+                            ),
+                          ],
+                        )),
                       ),
                     ),
-                  ],
-                )),
-                Container(
-                    child: Row(
-                  children: [
-                    Container(
-                      width: 195,
-                      height: 200,
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+
+                          color: Color(0xFFE8DCF8).withOpacity(1),
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -446,69 +369,48 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                                 builder: (context) => const CHI(),
                               ));
                         },
-                        child: Container(
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundImage:
-                                    AssetImage('lib/Chihuahua.webp'),
+                        child: Center(
+                            child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              backgroundImage:
+                                  AssetImage('lib/Chihuahua.webp'),
+                            ),
+                            SizedBox(width:10),
+                            Text(
+                              'Chihuahua',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              SizedBox(height: 5),
-                              Text(
-                                'Chihuahua',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              SizedBox(height: 5),
+                            ),
+                            SizedBox(width: 5),
 
-                              Text(
-                                '(HUAHUA)',
-                                style: TextStyle(
+                            Text(
+                              '(HUAHUA)',
+                              style: TextStyle(
 
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              // Text(
-                              //   'APR-346.1%',
-                              //   style: TextStyle(
-                              //
-                              //     fontSize: 15,
-                              //     fontWeight: FontWeight.bold,
-                              //     color: Colors.white,
-                              //   ),
-                              // ),
-                            ],
-                          )),
-                          margin: EdgeInsets.fromLTRB(5,12,5,12),
-                          decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  // color: Colors.pink,
-                                  color: Colors.blueGrey,
-                                  blurRadius: 1.0, // soften the shadow
-                                  spreadRadius:0, //extend the shadow
-                                  offset: Offset(
-                                    3, // Move to right 10  horizontally
-                                    3, // Move to bottom 10 Vertically
-                                  ),
-                                )
-                              ],
-                              color: Color(0xFF1D1e33),
-                              borderRadius: BorderRadius.circular(10.0)),
-                        ),
+                            ),
+                          ],
+                        )),
                       ),
                     ),
-                    Container(
-                      width: 195,
-                      height: 200,
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+                          // color: Color(0xFFE3F6FD).withOpacity(1),
+                          borderRadius: BorderRadius.circular(10.0)),
                       child: TextButton(
                         onPressed: () {
                           Navigator.push(
@@ -517,68 +419,50 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                                 builder: (context) => const AKT(),
                               ));
                         },
-                        child: Container(
-                          child: Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircleAvatar(
-                                radius: 40,
-                                backgroundImage: AssetImage('lib/Akash.jpeg'),
+                        child: Center(
+                            child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 25,
+                              backgroundImage: AssetImage('lib/Akash.jpeg'),
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              'Akash',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              Text(
-                                'Akash',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              '(AKT)',
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                              SizedBox(height: 5),
-                              Text(
-                                '(AKT)',
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
+                            ),
 
-                              // Text(
-                              //   'APR-32.06%',
-                              //   style: TextStyle(
-                              //     fontSize: 15,
-                              //     fontWeight: FontWeight.bold,
-                              //     color: Colors.white,
-                              //   ),
-                              // ),
-                            ],
-                          )),
-                          margin: EdgeInsets.fromLTRB(5,12,5,12),
-                          decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  // color: Colors.pink,
-                                  color: Colors.blueGrey,
-                                  blurRadius: 1.0, // soften the shadow
-                                  spreadRadius:0, //extend the shadow
-                                  offset: Offset(
-                                    3, // Move to right 10  horizontally
-                                    3, // Move to bottom 10 Vertically
-                                  ),
-                                )
-                              ],
-                              color: Color(0xFF1D1e33),
-                              borderRadius: BorderRadius.circular(10.0)),
-                        ),
+                            // Text(
+                            //   'APR-32.06%',
+                            //   style: TextStyle(
+                            //     fontSize: 15,
+                            //     fontWeight: FontWeight.bold,
+                            //     color: Colors.white,
+                            //   ),
+                            // ),
+                          ],
+                        )),
                       ),
                     ),
-                  ],
-                )),
+                  ),
+                ),
               ],
             ),
-            WhyUs(),
-            ContactUs(),
+            // WhyUs(),
+            // ContactUs(),
           ],
         ),
       ),),
