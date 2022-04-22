@@ -17,23 +17,21 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
     double _value = 0;
     return Scaffold(
       appBar: AppBar(
+        foregroundColor: Colors.black,
         title: const Text('UMEE CALCULATOR',
             style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 20,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
+
             )),
-        backgroundColor: Color(0xFF0A0E40),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
           child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('lib/register.png'),
-                fit: BoxFit.cover,
-              ),
-            ),
+           
             child: Container(
               height: 730,
               width: 400,
@@ -57,7 +55,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -68,7 +66,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -81,7 +79,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -92,7 +90,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -105,7 +103,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -116,7 +114,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -127,7 +125,8 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                               )),
                           margin: const EdgeInsets.all(20.0),
                           decoration: BoxDecoration(
-                              color: const Color(0xFF1D1e33),
+                              gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+
                               borderRadius: BorderRadius.circular(10.0)),
                         ),
                       ),
@@ -244,7 +243,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -255,7 +254,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -268,7 +267,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -279,7 +278,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -292,7 +291,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -303,7 +302,7 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                                             style: const TextStyle(
                                               fontSize: 13,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white,
+                                              color: Colors.black,
                                             ),
                                           ),
                                         ),
@@ -314,7 +313,8 @@ class _UmeeCalculatorState extends State<UmeeCalculator> {
                               )),
                           margin: const EdgeInsets.all(20.0),
                           decoration: BoxDecoration(
-                              color: const Color(0xFF1D1e33),
+                              gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
+
                               borderRadius: BorderRadius.circular(10.0)),
                         ),
                       ),

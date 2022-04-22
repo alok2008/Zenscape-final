@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zenscape_final/KiDashboard.dart';
+import 'package:lottie/lottie.dart';
 
 class KICalculator extends StatefulWidget {
   KICalculator({this.APR, this.Price, this.Staking, this.votingpower});
@@ -23,9 +24,9 @@ class _KICalculatorState extends State<KICalculator> {
   dynamic thisStaking;
   dynamic value;
   dynamic thisvotingpower;
-  dynamic dailyreward;
-  dynamic monthlyreward;
-  dynamic annualreward;
+  dynamic dailyreward=0;
+  dynamic monthlyreward=0;
+  dynamic annualreward=0;
 
   void initState() {
     super.initState();
@@ -37,7 +38,7 @@ class _KICalculatorState extends State<KICalculator> {
   Future<void> updateUI() async {
     thisAPR = widget.APR;
     thisPrice = widget.Price;
-    thisStaking = widget.Staking;
+    thisStaking = widget.Staking/1000000;
     thisvotingpower = widget.votingpower;
    dailyreward = ((double.parse(kiController.text)*double.parse(thisAPR)/100)/365).toStringAsFixed(4);
     monthlyreward = ((double.parse(kiController.text)*double.parse(thisAPR)/100)/12).toStringAsFixed(4);
@@ -108,7 +109,7 @@ class _KICalculatorState extends State<KICalculator> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      'APR',
+                                      'APR ',
                                       style: const TextStyle(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold,
@@ -119,7 +120,7 @@ class _KICalculatorState extends State<KICalculator> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '$thisAPR',
+                                      '$thisAPR %',
                                       style: const TextStyle(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold,
@@ -143,7 +144,7 @@ class _KICalculatorState extends State<KICalculator> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      '$thisvotingpower',
+                                      '$thisvotingpower %',
                                       style: const TextStyle(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold,
@@ -157,7 +158,17 @@ class _KICalculatorState extends State<KICalculator> {
                           ],
                         )),
                         margin: const EdgeInsets.all(20.0),
-                        decoration: BoxDecoration(
+                        decoration: BoxDecoration(boxShadow: [
+                          BoxShadow(
+                            color: Colors.blueGrey,
+                            blurRadius: 1.0, // soften the shadow
+                            spreadRadius: 0, //extend the shadow
+                            offset: Offset(
+                              3, // Move to right 10  horizontally
+                              3, // Move to bottom 10 Vetically
+                            ),
+                          )
+                        ],
                             gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
 
                             color: const Color(0xFF1D1e33).withOpacity(1),
@@ -195,10 +206,13 @@ class _KICalculatorState extends State<KICalculator> {
                     ),
                     onChanged: (abc) {
                       setState(() {
-                        usdController.text =
-                            (double.parse(abc) * double.parse('$thisPrice'))
-                                .toStringAsFixed(2);
-                      });
+                        if(kiController.text==null){
+                          usdController.text=0.toStringAsFixed(1);
+                        }else {
+                          usdController.text =
+                              (double.parse(abc) * double.parse('$thisPrice'))
+                                  .toStringAsFixed(2);
+                        } });
                     },
                     keyboardType: TextInputType.number,
                   ),
@@ -211,11 +225,10 @@ class _KICalculatorState extends State<KICalculator> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: const Icon(
-                    Icons.compare_arrows_outlined,
-                    color: Colors.pink,
-                    size: 40.0,
-                  ),
+                  child: Container(
+                      height: 50,
+                      width: 50,
+                      child: Lottie.asset('asset/92673-exchange-arrows.json')),
                 ),
                 Row(
                   children: [
@@ -348,6 +361,17 @@ class _KICalculatorState extends State<KICalculator> {
                         )),
                         margin: const EdgeInsets.all(20.0),
                         decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.blueGrey,
+                                blurRadius: 1.0, // soften the shadow
+                                spreadRadius: 0, //extend the shadow
+                                offset: Offset(
+                                  3, // Move to right 10  horizontally
+                                  3, // Move to bottom 10 Vetically
+                                ),
+                              )
+                            ],
                             gradient: LinearGradient(colors: [Color(0xFFE3F6FD), Color((0xFFE8DCF8))]),
 
                             color: const Color(0xFF1D1e33).withOpacity(1),

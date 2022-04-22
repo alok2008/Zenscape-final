@@ -246,10 +246,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   Center(
                     child: ElevatedButton(
 
-                      child: const Text('Stake Now >>'),
+                      child: const Text('Stake Now >>',
+                      style: TextStyle(
+                        color: Colors.black
+                      )
+                      ),
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(Color(0xFF444B59)),
+                            MaterialStateProperty.all<Color>(Color(0xFFE3F6FD)),
                       ),
                       onPressed: () {
                         Navigator.push(

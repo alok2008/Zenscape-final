@@ -90,7 +90,7 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
               label: 'Profile',
               backgroundColor: Colors.white),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.more_horiz_rounded),
               label: 'Profile',
               backgroundColor: Colors.white),
         ],
@@ -131,7 +131,6 @@ class _NetworksPageState extends State<NetworksPage> with TickerProviderStateMix
                         },
                         child: Center(
                             child: Row(
-                          // mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Hero(
                               tag: 'Kilogo',
